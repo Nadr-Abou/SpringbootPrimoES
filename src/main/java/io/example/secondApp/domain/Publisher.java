@@ -1,12 +1,11 @@
 package io.example.secondApp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -19,6 +18,9 @@ public class Publisher {
     private String city;
     private String state;
     private String zipCode;
+
+    @OneToMany(mappedBy = "publisher")
+    private Set<Book> books = new HashSet<>();
 
     public long getId() {
         return Id;
@@ -80,4 +82,6 @@ public class Publisher {
     public int hashCode() {
         return Objects.hash(Id);
     }
+
+
 }
