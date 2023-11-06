@@ -2,7 +2,9 @@ package io.example.secondApp.services;
 
 import io.example.secondApp.domain.Book;
 import io.example.secondApp.repositories.BookRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     public BookServiceImpl(BookRepository bookRepository){
@@ -15,6 +17,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book getFirstBook() {
+        if(bookRepository.count() != 0){
+            //return bookRepository;
+        }
         return null;
     }
 }
