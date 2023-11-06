@@ -18,8 +18,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book getFirstBook() {
         if(bookRepository.count() != 0){
-            //return bookRepository;
+            return bookRepository.findAll().iterator().next();
         }
-        return null;
+        return new Book();
     }
 }
