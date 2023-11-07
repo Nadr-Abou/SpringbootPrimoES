@@ -29,8 +29,9 @@ public class BookController {
         return "firstBook";
     }
     @RequestMapping(path = "/bookbyid/{idBook}")
-    public ModelAndView getBookByID(@PathVariable(value = "idBook") long id){
+    public ModelAndView getBookByID(@PathVariable(value = "idBook") long idBook){
         ModelAndView modelAndView = new ModelAndView("bookById");
+        modelAndView.addObject("book",bookService.getByID(idBook));
         return modelAndView;
     }
 

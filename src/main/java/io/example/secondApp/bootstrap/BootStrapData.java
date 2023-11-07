@@ -26,7 +26,7 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Bootstrap - start");
 
         Publisher p1 = new Publisher();
-        p1.setPublisherName("Editore 01");
+        p1.setPublisherName("Nadr");
         p1.setCity("Milano");
         p1.setAddress("via .... 01");
         p1.setZipCode("00000");
@@ -34,8 +34,8 @@ public class BootStrapData implements CommandLineRunner {
         Publisher p1Saved = publisherRepository.save(p1);
 
         Book b1 = new Book();
-        b1.setTitle("Titolo di B1"); //crea libro
-        b1.setIsbn("Isbn di B1");
+        b1.setTitle("Il primo libro"); //crea libro
+        b1.setIsbn("6569548484");
         b1.setPublisher(p1Saved);
         Book b1Saved = bookRepository.save(b1); //scrive su database
 
