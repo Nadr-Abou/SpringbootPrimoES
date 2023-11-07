@@ -6,7 +6,14 @@
   <link th:href="@{/styles/style.css}" rel="stylesheet" />
 </head>
 <body>
-  <a th:href="@{'/'}">Homepage</a>
-  <a th:href="@{'books'}">Lista dei libri</a>
+    <div>
+        <h1>Menu in Index</h1>
+        <a th:href="${'/'}">Homepage</a>
+        <a th:href="${'books'}">Lista dei libri</a>
+    </div>
+    <div>
+        <h1>Menu con th:insert="fragments/header</h1>
+        <div th:insert="fragments/header :: block-header"></div>
+    </div>
 </body>
 </html>
