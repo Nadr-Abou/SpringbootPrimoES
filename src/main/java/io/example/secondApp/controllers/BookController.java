@@ -15,20 +15,20 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @RequestMapping("/books")
+    @RequestMapping("book/books")
     public String getBooks(Model model){
         System.out.println("sono in getBooks");
         model.addAttribute("books",bookService.findAll());
         return "books";
     }
 
-    @RequestMapping("/firstBook")
+    @RequestMapping("book/firstBook")
     public String getFirstBook(Model model){
         System.out.println("sono in getBooks");
         model.addAttribute("book",bookService.getFirstBook());
         return "firstBook";
     }
-    @RequestMapping(path = "/bookbyid/{idBook}")
+    @RequestMapping(path = "book/bookbyid/{idBook}")
     public ModelAndView getBookByID(@PathVariable(value = "idBook") long idBook){
         ModelAndView modelAndView = new ModelAndView("bookById");
         modelAndView.addObject("book",bookService.getByID(idBook));
