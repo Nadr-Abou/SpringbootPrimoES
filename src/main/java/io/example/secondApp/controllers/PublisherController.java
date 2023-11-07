@@ -16,6 +16,6 @@ public class PublisherController {
     @RequestMapping("/firstPublisher")
     String getFirstPublisher(Model model){
         model.addAttribute("firstPublisher",publisherService.getFirstPublisher());
-        return "firstPublisher";
+        return "publisher";
     }
 }

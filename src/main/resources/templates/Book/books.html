@@ -14,7 +14,9 @@
             <th>Publisher Name</th>
         </tr>
         <tr th:each="book : ${books}">
-            <td th:text="${book.id}">1</td>
+            <td>
+                <a th:href="@{'/bookbyid/'+${book.id}}" th:text="${book.id}"></a><!--elemento di hyperlink-->
+            </td>
             <td th:text="${book.title}">Libro</td>
             <td th:text="${book.isbn}">ISBN</td>
             <td th:text="${book.publisher.getPublisherName()}"></td>
