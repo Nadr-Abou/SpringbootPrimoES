@@ -22,4 +22,14 @@ public class BookServiceImpl implements BookService {
         }
         return new Book();
     }
+
+    @Override
+    public Book getByID(long id) {
+        for(Book b : bookRepository.findAll()){
+            if(b.getId() == id){
+                return b;
+            }
+        }
+        return new Book();
+    }
 }
