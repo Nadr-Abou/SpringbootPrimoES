@@ -13,9 +13,9 @@ public class PublisherController {
         this.publisherService = publisherService;
     }
 
-    @RequestMapping("/firstPublisher")
+    @RequestMapping("publisher/firstPublisher")
     String getFirstPublisher(Model model){
         model.addAttribute("firstPublisher",publisherService.getFirstPublisher());
-        return "publisher";
+        return "publisher/publisher";
     }
 }

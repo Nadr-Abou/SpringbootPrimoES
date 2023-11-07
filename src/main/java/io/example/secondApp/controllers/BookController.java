@@ -15,22 +15,22 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @RequestMapping("book/books")
+    @RequestMapping("book/")
     public String getBooks(Model model){
         System.out.println("sono in getBooks");
         model.addAttribute("books",bookService.findAll());
-        return "books";
+        return "book/books";
     }
 
     @RequestMapping("book/firstBook")
     public String getFirstBook(Model model){
         System.out.println("sono in getBooks");
         model.addAttribute("book",bookService.getFirstBook());
-        return "firstBook";
+        return "book/firstBook";
     }
     @RequestMapping(path = "book/bookbyid/{idBook}")
     public ModelAndView getBookByID(@PathVariable(value = "idBook") long idBook){
-        ModelAndView modelAndView = new ModelAndView("bookById");
+        ModelAndView modelAndView = new ModelAndView("book/bookById");
         modelAndView.addObject("book",bookService.getByID(idBook));
         return modelAndView;
     }
