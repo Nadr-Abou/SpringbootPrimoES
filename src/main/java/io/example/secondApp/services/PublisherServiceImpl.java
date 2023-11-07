@@ -14,6 +14,11 @@ public class PublisherServiceImpl implements PublisherService {
     }
 
     @Override
+    public Iterable<Publisher> getAllPublisher() {
+        return publisherRepository.findAll();
+    }
+
+    @Override
     public Publisher getFirstPublisher() {
         return publisherRepository.findAll().iterator().next();
     }

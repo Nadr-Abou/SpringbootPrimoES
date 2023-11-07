@@ -1,3 +1,7 @@
 body{
     background-color: gray;
 }
+
+.books body{
+    align-items: center;
+}
